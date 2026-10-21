@@ -62,7 +62,7 @@ class Game:
     def startBet(self, min_bet:int, player:Person):
         print(f"Place your bet!             Balance:{player.chips}")
         bet = int(input(f"(Minimum : {min_bet}):       "))
-        if bet < player.chips and bet >= min_bet:
+        if min_bet <= bet <= player.chips:
             self.current_bet = player.placeBet(bet)
         else:
             print("Not Enough")
